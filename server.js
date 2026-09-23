@@ -4,7 +4,7 @@ const path = require("path");
 const app = express();
 const ticketsRouter = require("./src/routes/tickets");
 const usuarioRouter = require("./src/routes/usuario");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 // Permitir JSON
 app.use(express.json());
@@ -20,10 +20,10 @@ app.get("/", (req, res) => {
 });
 
 // Iniciar servidor
-app.listen(PORT, () => {
-    console.log("========================================");
-    console.log(" MESA DE AYUDA - LA DIVINATA");
-    console.log("========================================");
-    console.log(`Servidor iniciado en puerto ${PORT}`);
-    console.log(`http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log("================================");
+    console.log(` const PORT: string | ${PORT} `);
+    console.log(` Follow link (ctrl + click) `);
+    console.log(` http://localhost:${PORT} `);
+    console.log("================================")
 });
