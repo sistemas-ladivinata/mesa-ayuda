@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mesa de Ayuda - La Divinata</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- ============================
+       HEADER
+  ============================= -->
+
+  <header class="topbar">
+
+    <div class="topbar-inner">
+
+      <div class="brand">
+
+        <img
+            class="brand-logo"
+            src="data:image/png;base64,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"
+            alt="La Divinata"
+        >
+
+        <div>
+
+          <h1>Mesa de Ayuda</h1>
+
+          <small>
+            Soporte interno · Odoo
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ============================
+       CONTENIDO
+  ============================= -->
+
+  <main class="container">
+
+    <div
+      id="globalNotice"
+      class="notice"
+    ></div>
+
+
+    <!-- ============================
+         IDENTIFICACION
+    ============================= -->
+
+    <section
+      id="identityView"
+      class="card"
+    >
+
+      <h2>
+        Identifica tu cuenta
+      </h2>
+
+      <p class="subtitle">
+        Usa tu correo corporativo de La Divinata para consultar y registrar tus tickets.
+      </p>
+
+      <div class="identity">
+
+        <div>
+
+          <label>
+            Correo corporativo
+            <span class="required">*</span>
+          </label>
+
+          <input
+            id="identityEmail"
+            type="email"
+            placeholder="nombre@ladivinata.mx"
+            autocomplete="email"
+          >
+
+          <div class="lock-note">
+            Solo se permiten correos @ladivinata.mx.
+          </div>
+
+        </div>
+
+        <button
+          class="primary"
+          id="btnIdentificar"
+          type="button"
+        >
+          Continuar
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================
+         APP
+    ============================= -->
+
+    <section
+      id="appView"
+      class="hidden"
+    >
+
+      <div class="card">
+
+        <div class="user-chip">
+
+          Solicitante:
+
+          <strong id="userName"></strong>
+
+          ·
+
+          <span id="userEmail"></span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ============================
+           TABS
+      ============================= -->
+
+      <div class="tabs">
+
+        <button
+          class="primary"
+          id="tabNew"
+          type="button"
+        >
+          ➕ Nuevo ticket
+        </button>
+
+        <button
+          class="secondary"
+          id="tabTickets"
+          type="button"
+        >
+          📋 Mis tickets
+        </button>
+
+        <button
+          class="secondary"
+          id="btnCambiarCorreo"
+          type="button"
+        >
+          Cambiar correo
+        </button>
+
+      </div>
+
+
+      <!-- ============================
+           NUEVO TICKET
+      ============================= -->
+
+      <section
+        id="viewNuevo"
+        class="card"
+      >
+
+        <h2>
+          Crear un nuevo ticket
+        </h2>
+
+        <p class="subtitle">
+          Describe el problema y el equipo de Soporte le dará seguimiento.
+        </p>
+
+        <div
+          id="formNotice"
+          class="notice"
+        ></div>
+
+
+        <form id="ticketForm">
+
+          <div class="grid">
+
+            <!-- SOLICITANTE -->
+
+            <div>
+
+              <label>
+                Solicitante
+              </label>
+
+              <input
+                id="nombre"
+                type="text"
+                readonly
+              >
+
+            </div>
+
+
+            <!-- CORREO -->
+
+            <div>
+
+              <label>
+                Correo
+              </label>
+
+              <input
+                id="email"
+                type="email"
+                readonly
+              >
+
+            </div>
+
+
+            <!-- PRIORIDAD -->
+
+            <div>
+
+              <label>
+                Prioridad
+              </label>
+
+              <select id="prioridad">
+
+                <option value="0">
+                  Normal
+                </option>
+
+                <option value="1">
+                  Alta
+                </option>
+
+                <option value="2">
+                  Urgente
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- EQUIPO -->
+
+            <div>
+
+              <label>
+                Equipo de soporte
+              </label>
+
+              <input
+                id="equipo"
+                type="text"
+                value="Soporte"
+                readonly
+              >
+
+              <div class="lock-note">
+                Se asignará automáticamente al equipo Soporte.
+              </div>
+
+            </div>
+
+
+            <!-- ASUNTO -->
+
+            <div class="full">
+
+              <label>
+                Asunto
+                <span class="required">*</span>
+              </label>
+
+              <input
+                id="asunto"
+                type="text"
+                maxlength="150"
+                placeholder="Ej. No puedo imprimir tickets"
+                required
+              >
+
+            </div>
+
+
+            <!-- DESCRIPCION -->
+
+            <div class="full">
+
+              <label>
+                Descripción
+                <span class="required">*</span>
+              </label>
+
+              <textarea
+                id="descripcion"
+                maxlength="5000"
+                placeholder="Explica qué ocurrió, desde cuándo y cualquier detalle que pueda ayudar a soporte..."
+                required
+              ></textarea>
+
+            </div>
+
+
+            <!-- IMAGENES -->
+
+            <div class="full">
+
+              <label>
+                Imágenes
+              </label>
+
+              <input
+                id="imagenes"
+                type="file"
+                accept="image/*"
+                multiple
+              >
+
+              <div class="lock-note">
+                Puedes adjuntar hasta 3 imágenes de máximo 2 MB cada una.
+              </div>
+
+              <div
+                id="previewImagenes"
+                class="image-preview-container"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <!-- BOTONES -->
+
+          <div class="actions">
+
+            <button
+              class="primary"
+              id="btnCrear"
+              type="submit"
+            >
+              Crear ticket
+            </button>
+
+            <button
+              class="secondary"
+              id="btnLimpiar"
+              type="button"
+            >
+              Limpiar
+            </button>
+
+          </div>
+
+        </form>
+
+
+        <!-- ============================
+             CONFIRMACION
+        ============================= -->
+
+        <div
+          id="successBox"
+          class="success-ticket hidden"
+        >
+
+          <div style="font-size:44px">
+            ✅
+          </div>
+
+          <h2>
+            Ticket creado correctamente
+          </h2>
+
+          <div
+            class="number"
+            id="successNumber"
+          ></div>
+
+          <p id="successMessage"></p>
+
+          <div
+            class="actions"
+            style="justify-content:center"
+          >
+
+            <button
+              class="primary"
+              id="btnNuevoTicket"
+              type="button"
+            >
+              Crear otro ticket
+            </button>
+
+            <button
+              class="secondary"
+              id="btnVerMisTickets"
+              type="button"
+            >
+              Ver mis tickets
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ============================
+           MIS TICKETS
+      ============================= -->
+
+      <section
+        id="viewTickets"
+        class="card hidden"
+      >
+
+        <h2>
+          Mis tickets
+        </h2>
+
+        <p class="subtitle">
+          Aquí aparecen únicamente los tickets asociados a tu contacto de Odoo.
+        </p>
+
+
+        <div class="actions">
+
+          <button
+            class="primary"
+            id="btnBuscar"
+            type="button"
+          >
+            🔄 Actualizar
+          </button>
+
+        </div>
+
+
+        <!-- FILTROS -->
+
+        <div class="ticket-filters">
+
+          <button
+            type="button"
+            class="ticket-filter active"
+            data-filtro="todos"
+          >
+            Todos
+          </button>
+
+          <button
+            type="button"
+            class="ticket-filter"
+            data-filtro="nuevo"
+          >
+            Nuevos
+          </button>
+
+          <button
+            type="button"
+            class="ticket-filter"
+            data-filtro="progreso"
+          >
+            En progreso
+          </button>
+
+          <button
+            type="button"
+            class="ticket-filter"
+            data-filtro="pendiente"
+          >
+            Pendientes
+          </button>
+
+          <button
+            type="button"
+            class="ticket-filter"
+            data-filtro="resuelto"
+          >
+            Resueltos
+          </button>
+
+          <button
+            type="button"
+            class="ticket-filter"
+            data-filtro="cancelado"
+          >
+            Cancelados
+          </button>
+
+        </div>
+
+
+        <!-- LOADING -->
+
+        <div
+          id="ticketsLoading"
+          class="loading hidden"
+        >
+          Consultando Odoo...
+        </div>
+
+
+        <!-- LISTA -->
+
+        <div
+          id="ticketsList"
+          class="ticket-list"
+        ></div>
+
+
+        <!-- DETALLE -->
+
+        <div
+          id="ticketDetail"
+          class="hidden"
+        >
+
+          <button
+            class="secondary"
+            id="btnRegresarTickets"
+            type="button"
+          >
+            ← Regresar a mis tickets
+          </button>
+
+          <div
+            id="detailContent"
+            class="detail-box detail"
+          ></div>
+
+        </div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+</div>
+
+
+<!-- ============================
+     JAVASCRIPT
+============================= -->
+
+<script src="/js/app.js?v=2"></script>
+
+</body>
+</html>
